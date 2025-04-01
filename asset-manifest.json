@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/prem-rakshitha/static/css/main.51e6bbf6.css",
-    "main.js": "/prem-rakshitha/static/js/main.7c834d67.js",
+    "main.js": "/prem-rakshitha/static/js/main.839d70ea.js",
     "static/media/vid.mp4": "/prem-rakshitha/static/media/vid.ef6d0ea7ddf291e63642.mp4",
     "static/media/bg2.jpg": "/prem-rakshitha/static/media/bg2.88c7b395ce2431476fce.jpg",
     "static/media/feather.png": "/prem-rakshitha/static/media/feather.8eb9fcb26299097db628.png",
@@ -21,10 +21,10 @@
     "static/media/door1.jpg": "/prem-rakshitha/static/media/door1.8a725ef492158a25760f.jpg",
     "index.html": "/prem-rakshitha/index.html",
     "main.51e6bbf6.css.map": "/prem-rakshitha/static/css/main.51e6bbf6.css.map",
-    "main.7c834d67.js.map": "/prem-rakshitha/static/js/main.7c834d67.js.map"
+    "main.839d70ea.js.map": "/prem-rakshitha/static/js/main.839d70ea.js.map"
   },
   "entrypoints": [
     "static/css/main.51e6bbf6.css",
-    "static/js/main.7c834d67.js"
+    "static/js/main.839d70ea.js"
   ]
 }
