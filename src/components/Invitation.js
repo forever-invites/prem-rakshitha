@@ -145,7 +145,7 @@ const Invitation = () => {
               </span>
             </span> Seconds
           </p>
-          <p>Mark your calendar for a day filled with joy and happiness</p>
+          <p>Mark your calendar for a day filled with joy and happiness.</p>
         </div>
       </div>
 
