@@ -1,31 +1,42 @@
 {
   "files": {
     "main.css": "/prem-rakshitha/static/css/main.0bee6557.css",
-    "main.js": "/prem-rakshitha/static/js/main.bb708645.js",
+    "main.js": "/prem-rakshitha/static/js/main.615a2762.js",
     "static/media/vid.mp4": "/prem-rakshitha/static/media/vid.ef6d0ea7ddf291e63642.mp4",
     "static/media/bannervideo.mp4": "/prem-rakshitha/static/media/bannervideo.a94e8e20e5f81d12aadf.mp4",
     "static/media/bg2.jpg": "/prem-rakshitha/static/media/bg2.88c7b395ce2431476fce.jpg",
     "static/media/feather.png": "/prem-rakshitha/static/media/feather.8eb9fcb26299097db628.png",
     "static/media/mandala.png": "/prem-rakshitha/static/media/mandala.2186e5973ea26408753d.png",
     "static/media/7.jpg": "/prem-rakshitha/static/media/7.748ce3070ae714154426.jpg",
+    "static/media/3d3.jpeg": "/prem-rakshitha/static/media/3d3.f61fd8b559a94875d3a4.jpeg",
     "static/media/wedding.jpeg": "/prem-rakshitha/static/media/wedding.b5c97fee6c5bf04ada30.jpeg",
     "static/media/reception.jpeg": "/prem-rakshitha/static/media/reception.59bfb0fbf51a0206e30e.jpeg",
     "static/media/4.jpg": "/prem-rakshitha/static/media/4.859d25781320d241bf90.jpg",
+    "static/media/s6.jpeg": "/prem-rakshitha/static/media/s6.279bb52ac6b8daaa7dcc.jpeg",
     "static/media/6.jpg": "/prem-rakshitha/static/media/6.834eb6cffa0b3b6253d3.jpg",
     "static/media/1.jpg": "/prem-rakshitha/static/media/1.7cf1e0d92fda5ce8afd3.jpg",
     "static/media/5.jpg": "/prem-rakshitha/static/media/5.1063354082404179074a.jpg",
-    "static/media/9.jpg": "/prem-rakshitha/static/media/9.4806920c9a72838d2443.jpg",
     "static/media/3.jpg": "/prem-rakshitha/static/media/3.8e55253acf109a37de75.jpg",
     "static/media/door2.jpg": "/prem-rakshitha/static/media/door2.e2fecbca554db7fc1bf1.jpg",
+    "static/media/s7.jpeg": "/prem-rakshitha/static/media/s7.c4d74db0b499871b097a.jpeg",
     "static/media/8.jpg": "/prem-rakshitha/static/media/8.0714ee2ea84238fa26b5.jpg",
     "static/media/2.jpg": "/prem-rakshitha/static/media/2.86ebfcca982939b7e46f.jpg",
+    "static/media/3d1.jpeg": "/prem-rakshitha/static/media/3d1.74370fb642fa40e40eea.jpeg",
     "static/media/door1.jpg": "/prem-rakshitha/static/media/door1.8a725ef492158a25760f.jpg",
+    "static/media/s4.jpeg": "/prem-rakshitha/static/media/s4.ae5cf3747d05226f0ac4.jpeg",
+    "static/media/3d5.jpeg": "/prem-rakshitha/static/media/3d5.3a5fe8c23ae784758f6d.jpeg",
+    "static/media/s5.jpeg": "/prem-rakshitha/static/media/s5.0a116b860332fbc73cb6.jpeg",
+    "static/media/s3.jpeg": "/prem-rakshitha/static/media/s3.b829dd593a315626f2f4.jpeg",
+    "static/media/3d2.jpeg": "/prem-rakshitha/static/media/3d2.7768627ff5837347380b.jpeg",
+    "static/media/3d4.jpeg": "/prem-rakshitha/static/media/3d4.7bc1a47652c2992b7b50.jpeg",
+    "static/media/s2.jpeg": "/prem-rakshitha/static/media/s2.047a86973f0f0df02e09.jpeg",
+    "static/media/s1.jpeg": "/prem-rakshitha/static/media/s1.b47bad18a116283dbb35.jpeg",
     "index.html": "/prem-rakshitha/index.html",
     "main.0bee6557.css.map": "/prem-rakshitha/static/css/main.0bee6557.css.map",
-    "main.bb708645.js.map": "/prem-rakshitha/static/js/main.bb708645.js.map"
+    "main.615a2762.js.map": "/prem-rakshitha/static/js/main.615a2762.js.map"
   },
   "entrypoints": [
     "static/css/main.0bee6557.css",
-    "static/js/main.bb708645.js"
+    "static/js/main.615a2762.js"
   ]
 }
