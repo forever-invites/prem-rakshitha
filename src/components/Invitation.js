@@ -198,7 +198,7 @@ const Invitation = () => {
               {index % 2 === 0 ? (
                 <>
                   <div className="column image-column">
-                    <img src={require(`../images/carousel/${index + 1}.jpg`)} alt={`Row ${index + 1}`} loading="lazy" />
+                    <img src={require(`../images/saptapadi/s${index + 1}.jpeg`)} alt={`Row ${index + 1}`} loading="lazy" />
                   </div>
                   <div className="column text-column">
                     <p>{text}</p>
@@ -210,7 +210,7 @@ const Invitation = () => {
                     <p>{text}</p>
                   </div>
                   <div className="column image-column">
-                    <img src={require(`../images/carousel/${index + 1}.jpg`)} alt={`Row ${index + 1}`} loading="lazy" />
+                    <img src={require(`../images/saptapadi/s${index + 1}.jpeg`)} alt={`Row ${index + 1}`} loading="lazy" />
                   </div>
                 </>
               )}
