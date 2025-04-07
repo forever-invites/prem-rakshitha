@@ -291,8 +291,8 @@ const Invitation = () => {
           <div className="card-content">
             <h2>Contact Us</h2>
             <p>+91 9108710537</p>
+            <p>+91 8618829734</p>
             <p>+91 9740281336</p>
-            <p>+91 8892346969</p>
             <button
               className="whatsapp-button"
               onClick={() =>
