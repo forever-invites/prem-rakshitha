@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/prem-rakshitha/static/css/main.0bee6557.css",
-    "main.js": "/prem-rakshitha/static/js/main.615a2762.js",
+    "main.css": "/prem-rakshitha/static/css/main.14160e53.css",
+    "main.js": "/prem-rakshitha/static/js/main.6c71e5c7.js",
     "static/media/vid.mp4": "/prem-rakshitha/static/media/vid.ef6d0ea7ddf291e63642.mp4",
     "static/media/bannervideo.mp4": "/prem-rakshitha/static/media/bannervideo.a94e8e20e5f81d12aadf.mp4",
     "static/media/bg2.jpg": "/prem-rakshitha/static/media/bg2.88c7b395ce2431476fce.jpg",
@@ -32,11 +32,11 @@
     "static/media/s2.jpeg": "/prem-rakshitha/static/media/s2.047a86973f0f0df02e09.jpeg",
     "static/media/s1.jpeg": "/prem-rakshitha/static/media/s1.b47bad18a116283dbb35.jpeg",
     "index.html": "/prem-rakshitha/index.html",
-    "main.0bee6557.css.map": "/prem-rakshitha/static/css/main.0bee6557.css.map",
-    "main.615a2762.js.map": "/prem-rakshitha/static/js/main.615a2762.js.map"
+    "main.14160e53.css.map": "/prem-rakshitha/static/css/main.14160e53.css.map",
+    "main.6c71e5c7.js.map": "/prem-rakshitha/static/js/main.6c71e5c7.js.map"
   },
   "entrypoints": [
-    "static/css/main.0bee6557.css",
-    "static/js/main.615a2762.js"
+    "static/css/main.14160e53.css",
+    "static/js/main.6c71e5c7.js"
   ]
 }
