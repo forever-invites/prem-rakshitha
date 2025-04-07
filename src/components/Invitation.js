@@ -306,6 +306,13 @@ const Invitation = () => {
 
       </div>
 
+      <footer className="footer">
+        <p>© 2025 Forever-Invites. All rights reserved.</p>
+        <p>
+          Designed by Friend <span style={{ color: 'red' }}>♥</span> - Contact me for custom websites: 
+          <a href="mailto:foreverinvites.official@gmail.com" className="footer-link"> foreverinvites.official@gmail.com</a>
+        </p>
+      </footer>
     </div>
   );
 };
