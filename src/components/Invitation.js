@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
 import '../styles/Invitation.css';
-import Video from '../video/vid.mp4';
 import bannerVideo from '../video/bannervideo.mp4';
 import Carousel from './Carousel';
 import ThreeDSlider from "./ThreeDSlider"; // Import the ThreeDSlider component
@@ -18,6 +17,13 @@ import image8 from '../images/carousel/8.jpg';
 const Invitation = () => {
   const weddingDate = new Date('2025-04-20T09:45:00'); // Updated wedding date and time
   const [timeRemaining, setTimeRemaining] = useState({});
+  const [isTimeUp, setIsTimeUp] = useState(false);
+  const [liveTime, setLiveTime] = useState(0); // Track live time after countdown ends
+  const [showModal, setShowModal] = useState(false); // Initially hide the modal
+  const [showPoppers, setShowPoppers] = useState(false); // Initially disable party poppers
+  const [buttonText, setButtonText] = useState("Stop Poppers"); // Control button text
+  const [isExpanded, setIsExpanded] = useState(false); // Track if the button is expanded
+  const shrinkTimeoutRef = useRef(null); // Ref to manage shrinking timeout
   const rowsRef = useRef([]); // Ref to track rows
   const headingRef = useRef(null); // Ref to track the heading
   const cardsRef = useRef([]); // Ref to track cards
@@ -100,12 +106,33 @@ const Invitation = () => {
         setTimeRemaining({ days, hours, minutes, seconds });
       } else {
         setTimeRemaining({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+        setIsTimeUp(true); // Trigger modal when time is up
       }
     };
 
     const interval = setInterval(updateCountdown, 1000);
     return () => clearInterval(interval);
   }, [weddingDate]);
+
+  useEffect(() => {
+    if (isTimeUp) {
+      const liveInterval = setInterval(() => {
+        const now = new Date();
+        const elapsed = Math.floor((now - weddingDate) / 1000); // Calculate elapsed time
+        setLiveTime(elapsed);
+      }, 1000);
+      return () => clearInterval(liveInterval);
+    }
+  }, [isTimeUp, weddingDate]);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowModal(true); // Show the modal after 5 seconds
+      setShowPoppers(true); // Start the party poppers after 5 seconds
+    }, 5000); // 5 seconds delay
+
+    return () => clearTimeout(timer); // Clear the timer on component unmount
+  }, []);
 
   const getColorForSeconds = (seconds) => {
     const colors = [
@@ -117,8 +144,76 @@ const Invitation = () => {
     return colors[seconds % colors.length]; // Cycle through colors based on seconds
   };
 
+  const renderPartyPoppers = () => {
+    if (!showPoppers) return null; // Stop rendering poppers if disabled
+    const poppers = Array.from({ length: 80 }, (_, index) => (
+      <div
+        key={index}
+        className="party-popper"
+        style={{
+          left: `${Math.random() * 100}%`,
+          top: `${-Math.random() * 100}vh`,
+          animationDelay: `${Math.random() * 5}s`,
+          backgroundColor: `hsl(${Math.random() * 360}, 100%, 50%)`,
+        }}
+      ></div>
+    ));
+    return poppers;
+  };
+
+  const handlePoppersButtonClick = () => {
+    if (buttonText === "Congratulate Us") {
+      setShowModal(true); // Reopen the modal overlay
+      setShowPoppers(true); // Start the party poppers
+    } else {
+      setShowPoppers((prev) => !prev); // Toggle party poppers
+    }
+    setButtonText((prev) => (prev === "Stop Poppers" ? "Congratulate Us" : "Stop Poppers"));
+    startShrinkTimeout(); // Start shrinking timeout after click
+  };
+
+  const startShrinkTimeout = () => {
+    clearTimeout(shrinkTimeoutRef.current); // Clear any existing timeout
+    shrinkTimeoutRef.current = setTimeout(() => {
+      setIsExpanded(false); // Shrink the button after 3 seconds
+    }, 3000);
+  };
+
+  const handleExpand = () => {
+    setIsExpanded(true);
+    startShrinkTimeout(); // Restart shrinking timeout when expanded
+  };
+
   return (
     <div className="invitation-container">
+      {isTimeUp && showModal && (
+        <div
+          className="modal-overlay"
+          onClick={() => setShowModal(false)} // Close modal on overlay click
+        >
+          <div
+            className="modal heartbeat-animation"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside the modal
+          >
+            <button className="close-modal" onClick={() => setShowModal(false)}>
+              ✖
+            </button>
+            <h1>Thank you!</h1>
+            <p>We tied the knot and your blessings tied it tighter! Thank you for celebrating this beautiful moment with us.</p>
+          </div>
+        </div>
+      )}
+      {isTimeUp && renderPartyPoppers()}
+      {isTimeUp && (
+        <div
+          className={`stop-poppers-button ${isExpanded ? 'expanded' : ''}`}
+          onClick={handlePoppersButtonClick}
+          onMouseEnter={handleExpand}
+        >
+          <span className="magic-icon">🎉</span> {/* Party popper emoji */}
+          <span className="button-text">{buttonText}</span>
+        </div>
+      )}
       <div className="video-section">
         <video autoPlay muted loop>
           <source src={bannerVideo} type="video/mp4" />
@@ -137,43 +232,31 @@ const Invitation = () => {
 
       <div className="section-1">
         <div className="slide-in-left">
-          <h1>Save the Date</h1>
-          <p className="wedding-date">April 19th & 20th, 2025</p>
+          <h1>{isTimeUp ? "Our time together" : "Save the Date"}</h1>
+          <p className="wedding-date">{isTimeUp ? "has already started ticking..." : "April 19th & 20th, 2025"}</p>
         </div>
         <div className="slide-in-right">
           <p className="countdown-inline">
-            <span>{timeRemaining.days}</span> Days, 
-            <span>{timeRemaining.hours}</span> Hrs, 
-            <span>{timeRemaining.minutes}</span> Mins,  
+            <span>{isTimeUp ? Math.floor(liveTime / (60 * 60 * 24)) : timeRemaining.days}</span> Days, 
+            <span>{isTimeUp ? Math.floor((liveTime / (60 * 60)) % 24) : timeRemaining.hours}</span> Hrs, 
+            <span>{isTimeUp ? Math.floor((liveTime / 60) % 60) : timeRemaining.minutes}</span> Mins,  
             <span className="seconds-wrapper">
               <span
-                key={timeRemaining.seconds}
+                key={isTimeUp ? liveTime % 60 : timeRemaining.seconds}
                 className="seconds"
-                style={{ color: getColorForSeconds(timeRemaining.seconds) }}
+                style={{ color: getColorForSeconds(isTimeUp ? liveTime % 60 : timeRemaining.seconds) }}
               >
-                {timeRemaining.seconds}
+                {isTimeUp ? liveTime % 60 : timeRemaining.seconds}
               </span>
             </span> Seconds
           </p>
-          <p>Mark your calendar for a day filled with joy and happiness.</p>
+          <p>{isTimeUp ? "Cherish every moment of this beautiful journey." : "Mark your calendar for a day filled with joy and happiness."}</p>
         </div>
       </div>
 
       <div className="section-3">
         <Carousel images={carouselImages} />
       </div>
-
-      {/* <div className="section-4">
-        <div className="groom-name">
-          <h1>Pream</h1>
-        </div>
-        <div className="rotating-mandala">
-          <div className="mandala-container">
-            <img src={require('../images/mandala.png')} alt="Mandala" className="mandala" />
-            <img src={require('../images/feather.png')} alt="Small Image" className="small-image" />
-          </div>
-        </div>
-      </div> */}
 
       <div className="section-5">
         <div
