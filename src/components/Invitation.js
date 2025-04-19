@@ -181,7 +181,7 @@ const Invitation = () => {
 
   const handleExpand = () => {
     setIsExpanded(true);
-    startShrinkTimeout(); // Restart shrinking timeout when expanded
+    startShrinkTimeout();
   };
 
   return (
